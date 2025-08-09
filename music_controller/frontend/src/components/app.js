@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import RoomJoinPage from './RoomJoinPage';
 import CreateRoomPage from './CreateRoomPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from './HomePage';
 
 
 export default class App extends Component { 
@@ -14,8 +15,8 @@ export default class App extends Component {
     return (
       <Router>
         <Routes>
-          <Route path="/" element={<p>This is a page</p>} />
-          <Route path="/join" element={<RoomJoinPage />} />
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/join" element={<RoomJoinPage/>} />
           <Route path="/create" element={<CreateRoomPage />} />
         </Routes>
       </Router>

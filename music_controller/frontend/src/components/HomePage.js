@@ -5,8 +5,12 @@ export default class HomePage extends Component {
         super(props);
     }
 
-    renderMatches() {
-        return <p>HomePage</p>;
+    render() {
+        return (
+        <div> 
+          <p>This is the HomePage</p>
+        </div>
+    );
     }
 
 }

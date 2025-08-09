@@ -5,8 +5,11 @@ export default class RoomJoinPage extends Component {
         super(props);
     }
 
-    renderMatches() {
-        return <p>Join Room Page </p>;
-    }
-
+     render() {
+    return (
+        <div>
+            <p>This is the Join Room Page</p>
+        </div>
+    );
+  }
 }
