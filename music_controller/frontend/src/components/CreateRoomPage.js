@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Button } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import { Link } from 'react-router-dom';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 
 export default class CreateRoomPage extends Component {
+    defaultVotes = 2;
+
     constructor(props) {
         super(props);
     }
@@ -9,8 +21,37 @@ export default class CreateRoomPage extends Component {
     render() {
     return (
         <div>
-        <p>This is the create room page</p>
-        </div>
+       <Grid container spacing ={1}>
+         <Grid item xs={12} align="center">
+            <Typography component='h4' variant ='h4'>
+                Create A Room
+            </Typography>
+         </Grid>
+       </Grid>
+
+         <Grid item xs={12} align="center">
+            <FormControl component ="fieldset">
+                <FormHelperText>
+                    <div align='center'>
+                        Guest Control of Playback State
+                    </div>
+                </FormHelperText>
+                <RadioGroup row defaultValue="True">
+                    <FormControlLabel 
+                    value="false" 
+                    control={<Radio color="secondary"/>}
+                    label="Play/Pause"
+                    LabelPlacement="Bottom"/>
+                
+                    <FormControlLabel 
+                    value="true" 
+                    control={<Radio color="secondary"/>}
+                    label="No control"
+                    LabelPlacement="bottom"/>
+                </RadioGroup>
+            </FormControl>
+         </Grid>
+       </div>
     );
   }
 }
