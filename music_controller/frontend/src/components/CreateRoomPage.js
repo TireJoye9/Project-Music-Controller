@@ -37,9 +37,20 @@ export default class CreateRoomPage extends Component {
             guestCanPause: e.target.value === "true" ? true : false,
         });
     }
+    //link backend together 
     handleRoomButtonPressed()
     {
-        console.log(this.state)
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                votes_to_skip: this.state.votesToSkip,
+                guest_can_pause: this.state.guestCanPause,
+            }),
+        };
+        fetch('/api/create', requestOptions)
+        .then((Response) => Response.json())
+        .then((data) => console.log(data));
     }
 
     render() {
