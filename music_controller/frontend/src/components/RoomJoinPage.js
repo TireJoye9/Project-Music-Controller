@@ -7,7 +7,7 @@ export default class RoomJoinPage extends Component {
 
      render() {
     return (
-        <div>
+        <div className='center'>
             <p>This is the Join Room Page</p>
         </div>
     );

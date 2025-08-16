@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from './HomePage';
 import RoomWrapper from './room';
 
+
 export default class App extends Component { 
   constructor(props) {
     super(props);
@@ -13,6 +14,7 @@ export default class App extends Component {
   }
  render() {
     return (
+      <div className="ok">
       <Router>
         <Routes>
           <Route path="/" element={<HomePage/>} />
@@ -21,6 +23,7 @@ export default class App extends Component {
            <Route path="/room/:roomCode" element={<RoomWrapper />} />
         </Routes>
       </Router>
+      </div>
     );
   }
 }
