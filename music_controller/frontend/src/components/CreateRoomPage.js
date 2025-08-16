@@ -9,9 +9,10 @@ import { Link } from 'react-router-dom';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { useNavigate } from 'react-router-dom';
 
 
-export default class CreateRoomPage extends Component {
+class CreateRoomPage extends Component {
     defaultVotes = 2;
 
     constructor(props) {
@@ -50,7 +51,7 @@ export default class CreateRoomPage extends Component {
         };
         fetch('/api/create', requestOptions)
         .then((Response) => Response.json())
-        .then((data) => console.log(data));
+        .then((data) => this.props.navigate("/room/" + data.code));
     }
 
     render() {
@@ -118,3 +119,12 @@ export default class CreateRoomPage extends Component {
     );
   }
 }
+
+// Wrapper to inject navigate
+//  might change to function as inject wrappers for my classes is a bit redundant
+function WithNavigate(props) {
+  let navigate = useNavigate();
+  return <CreateRoomPage {...props} navigate={navigate} />;
+}
+
+export default WithNavigate;

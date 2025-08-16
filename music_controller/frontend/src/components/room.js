@@ -12,6 +12,24 @@ class Room extends Component {
     };
   }
 
+   //should force rerender
+   //right after the component is first rendered to the DOM.
+    componentDidMount() {
+    this.getRoomDetails();
+  }
+
+  getRoomDetails(){
+    fetch('/api/get-room' + '?code=' + this.props.roomCode).then((response)=>
+       response.json()
+    ).then((data) => {
+      this.setState({
+        votesToSkip: data.votes_to_skip,
+        guestCanPause: data.guest_can_pause,
+        isHost: data.is_host,
+      })
+    });
+  }
+
 
   render() {
     const { roomCode } = this.props;
