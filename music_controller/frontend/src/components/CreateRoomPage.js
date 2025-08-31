@@ -12,6 +12,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { useNavigate } from 'react-router-dom';
 
 
+
+
 class CreateRoomPage extends Component {
     defaultVotes = 2;
 
@@ -56,8 +58,8 @@ class CreateRoomPage extends Component {
 
     render() {
     return (
-        <div>
-       <Grid container spacing ={1}>
+        <div >
+       <Grid container spacing={1}>
          <Grid item xs={12} align="center">
             <Typography component='h4' variant ='h4'>
                 Create A Room
@@ -111,7 +113,7 @@ class CreateRoomPage extends Component {
           <Grid item xs={12} align="center">
             <Button color="primary" variant='contained' to="/" component={Link}>
              Back
-             </Button>
+            </Button>
           </Grid>
         </Grid>
 

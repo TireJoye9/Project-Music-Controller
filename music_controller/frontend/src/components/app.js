@@ -4,7 +4,7 @@ import RoomJoinPage from './RoomJoinPage';
 import CreateRoomPage from './CreateRoomPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from './HomePage';
-import RoomWrapper from './room';
+import RoomWrapper from './Room';
 
 
 export default class App extends Component { 
@@ -14,7 +14,7 @@ export default class App extends Component {
   }
  render() {
     return (
-      <div className="ok">
+      <div className= 'center'>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage/>} />
