@@ -3,9 +3,11 @@ from .views import RoomView
 from .views import CreateRoomView
 from .views import GetRoom
 from .views import JoinRoom
+from .views import UserInRoom
 urlpatterns = [
     path('room', RoomView.as_view()),
     path('create', CreateRoomView.as_view()),
     path('get-room', GetRoom.as_view()),
     path('join', JoinRoom.as_view()),
+    path('user-in-room', UserInRoom.as_view())
 ]

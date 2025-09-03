@@ -17,7 +17,14 @@ export default class App extends Component {
       <div className= 'center'>
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage/>} />
+          <Route path="/" element={<HomePage/>} render={() => {
+            return this.state.roomCode ? (
+            <Redirect to={`/room/${this.state.roomCode}`}/> 
+          ) : (
+              this.renderHomePage()
+            );
+          }}
+          />
           <Route path="/join" element={<RoomJoinPage/>} />
           <Route path="/create" element={<CreateRoomPage />} />
            <Route path="/room/:roomCode" element={<RoomWrapper />} />
